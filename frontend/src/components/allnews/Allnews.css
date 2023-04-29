@@ -1,0 +1,11 @@
+.allnews{
+}
+.newsCard-wrapper{
+  display: flex;
+  overflow-y: hidden;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
+}

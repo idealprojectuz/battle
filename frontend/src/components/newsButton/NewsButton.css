@@ -1,0 +1,12 @@
+.newsBtn{
+  display: flex;
+  align-items: center;
+  padding: 0px 40px;
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  margin-bottom: 61px;
+}

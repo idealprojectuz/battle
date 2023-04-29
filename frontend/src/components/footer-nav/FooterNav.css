@@ -1,0 +1,11 @@
+.footer-nav__item{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.footer-nav__item li{
+font-weight: 600;
+font-size: 18px;
+line-height: 25px;
+color:var(--footerTextColor);
+}
