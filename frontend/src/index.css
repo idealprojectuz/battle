@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
+
+
+:root{
+  --body-collor:#fff:
+  --textFirstColor:#000000;
+  --textSecondColor:#4A4B4C;;
+  --card-color:#F4F5F7;
+  --allnewsBtn:#EAEAEA;
+  --footerColor:#469264;
+  --footerText:#ffff;
+  --primaryColor: #3C7955;
+  --secondaryColor:#DAE9E0;
+}
+
+.darkMode{
+  --body-collor:#16171B:
+  --textFirstColor:#fffff;
+  --textSecondColor:#959595;
+  --card-color: #222327;
+  --allnewsBtn:#EAEAEA;
+  --footerColor:#469264;
+  --footerText:#ffff;
+}
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: #222327;
+}
+ul,ol,li{
+  list-style: none;
+}
+
+
+.container{
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
