@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
 
 
+
 :root{
   --body-collor:#fff:
   --textFirstColor:#000000;
-  --textSecondColor:#4A4B4C;;
+  --textSecondColor:#4A4B4C;
+  --footerTextColor:#ffff;
+  --textThirdColor:#898989;
   --card-color:#F4F5F7;
   --allnewsBtn:#EAEAEA;
   --footerColor:#469264;
   --footerText:#ffff;
   --primaryColor: #3C7955;
   --secondaryColor:#DAE9E0;
+  --categoryColor:#DAE9E0;
+  --categoryItemColor:#F4F5F7;
+  --categoryaTextC0lor:#777777;
+  --selectColor:#ffff;
+  --liColor: #F4F5F7;
 }
 
 .darkMode{
@@ -22,7 +30,9 @@
   --footerColor:#469264;
   --footerText:#ffff;
 }
-
+::-webkit-scrollbar{
+  width: 0;
+}
 
 *{
 margin: 0;
@@ -36,6 +46,8 @@ a{
 }
 ul,ol,li{
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -43,4 +55,8 @@ ul,ol,li{
   max-width: 1700px;
   width: 100%;
   margin: 0 auto;
+}
+body{
+  font-family: 'Manrope';
+
 }
