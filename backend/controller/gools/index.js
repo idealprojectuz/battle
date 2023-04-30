@@ -3,11 +3,7 @@ const { sqlData } = require("../../utils/SqlData");
 const validate = require("./validate");
 
 const Get = async (_, res) => {
-  const data = await sqlData(`SELECT e.id, e.stadions, 
-  CONCAT('[', GROUP_CONCAT(JSON_OBJECT('goal_id', g.id, 'round', g.round, 'clubid',g.clubid, 'events_id',g.eventsid)), ']') AS gollar
-FROM events e
-LEFT JOIN gools g ON e.id = g.eventsid
-GROUP BY e.id`);
+  const data = await sqlData(`SELECT * from gools`);
   res.status(200).json({ status: 200, data });
 };
 
@@ -22,13 +18,12 @@ const Add = async (req, res) => {
     return;
   }
 
+  console.log(value);
   const newData = await sqlData(
-    "INSERT INTO events (command1, command2, stadions, categoryid, eventtime, additiontime) VALUES (?,?,?,?,?,?)",
-    value.command1,
-    value.command2,
-    value.stadions,
-    value.categoryid,
-    value.eventtime,
+    "INSERT INTO gools (round, eventsid, clubid, additiontime) VALUES (?, ?, ?, ?)",
+    value.round,
+    value.eventsid,
+    value.clubid,
     value.additiontime
   );
   res.status(200).json({
@@ -50,7 +45,7 @@ const Edit = async (req, res) => {
   }
 
   const oldData = await sqlData(
-    "select * from events where id = ? limit 1",
+    "select * from gools where id = ? limit 1",
     req.params.id
   );
   if (!oldData.length) {
@@ -63,12 +58,10 @@ const Edit = async (req, res) => {
   }
 
   const updated = await sqlData(
-    "update events set command1 = ?, command2 = ?, stadions = ?, categoryid = ?, eventtime = ?, additiontime = ?  where id  = ?",
-    value.command1 || oldData[0]?.command1,
-    value.command2 || oldData[0]?.command2,
-    value.stadions || oldData[0]?.stadions,
-    value.categoryid || oldData[0]?.categoryid,
-    value.eventtime || oldData[0]?.eventtime,
+    "update gools set round = ?, eventsid = ?, clubid = ?, additiontime = ?  where id  = ?",
+    value.round || oldData[0]?.round,
+    value.eventsid || oldData[0]?.eventsid,
+    value.clubid || oldData[0]?.clubid,
     value.additiontime || oldData[0]?.additiontime,
     req.params.id
   );
@@ -82,20 +75,7 @@ const Edit = async (req, res) => {
 
 const GetById = async (req, res) => {
   const data = await sqlData(
-    `SELECT e.id, e.stadions, 
-    CONCAT('[', GROUP_CONCAT(JSON_OBJECT('goal_id', g.id, 'round', g.round, 'clubid',g.clubid, 'events_id',g.eventsid)), ']') AS gollar,
-    CONCAT('[', GROUP_CONCAT(JSON_OBJECT('club_id', c.id, 'club_name', c.name, 'club_logo',c.logo)), ']') AS club1,
-    CONCAT('[', GROUP_CONCAT(JSON_OBJECT('club_id', cl.id, 'club_name', cl.name, 'club_logo',cl.logo)), ']') AS club2,
-    CONCAT('[', GROUP_CONCAT(JSON_OBJECT('stadion_name', s.name)), ']') AS stadion,
-    CONCAT('[', GROUP_CONCAT(JSON_OBJECT('category_name', ca.name)), ']') AS category
-  FROM events e
-  LEFT JOIN gools g ON e.id = g.eventsid
-  LEFT JOIN clubs c ON e.command1 = c.id
-  LEFT JOIN clubs cl ON e.command2 = cl.id
-  LEFT JOIN stadions s ON e.stadions = s.id
-  LEFT JOIN category ca ON e.categoryid = ca.id
-  where e.id = ?
-  GROUP BY e.id`,
+    `select * from gools where id = ? limit 1`,
     req.params.id
   );
   if (!data.length) {

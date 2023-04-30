@@ -42,12 +42,6 @@ const IsAdmin = async (req, res, next) => {
         return;
       }
 
-      //userga role berib shunga qarab keyingi stepga o'tqazish
-      //   if(foundUser[0].role != "admin"){
-      //     uka tur yo'qol
-      //   return;
-      //   }
-
       //bundan keyingi etapda console.log(req.user) qilinsa ushbu user danniylari consolega chiqadi
       req.user = foundUser[0];
 
