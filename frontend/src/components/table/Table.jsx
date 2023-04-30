@@ -3,12 +3,12 @@ import './Table.css'
 import TableImgCard from '../table-img-cards/TableImg-Card'
 import TableContent from '../table-conent/Table-content'
 
-function Table() {
+function Table({loading}) {
   return (
-    <div className='container'>
+    <div className='container'  data-aos="fade-right">
         <div className="table-wrapper">
-          <TableImgCard/>
-          <TableContent/>
+          <TableImgCard loading={loading}/>
+          <TableContent loading={loading}/>
         </div>
     </div>
   )

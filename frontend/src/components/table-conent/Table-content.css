@@ -8,11 +8,12 @@ color:var(--textFirstColor);
 .table-right select{
   width: 100%;
   height: 48px;
-  background: #FFFFFF;
+  background:var(--selectbg);
   border-radius: 6px;
   border: none;
   outline: none; 
   color: var(--textFirstColor); 
+  /* color: black; */
 }
 .table-list li{
 display: flex;
@@ -21,6 +22,7 @@ width: 100%;
 background-color:var(--liColor);
 justify-content: space-between;
 padding: 8px 0px;
+color: var(--textFirstColor); 
 }
 .table-list li div{
   display: flex;

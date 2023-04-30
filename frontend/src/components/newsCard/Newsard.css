@@ -24,7 +24,7 @@ gap: 12px;
 font-weight: 700;
 font-size: 20px;
 line-height: 27px;
-color: var(---textFirstColor);
+color: var(--textFirstColor);
 }
 .newsCard-text p{
 font-weight: 500;

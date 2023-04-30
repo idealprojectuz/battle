@@ -1,11 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Category.css'
 
 
-
-
-
 function Categorya() {
+
   return (
     <>
       <ul className='category'>
@@ -13,7 +11,7 @@ function Categorya() {
            
           <p>Italiya. Seriya A</p>
         </li>
-        <li className='category-item'>
+        <li className='category-item '>
         img
 
           <p>Italiya. Seriya A</p>

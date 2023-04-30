@@ -3,7 +3,6 @@
 
 
 :root{
-  --body-collor:#fff:
   --textFirstColor:#000000;
   --textSecondColor:#4A4B4C;
   --footerTextColor:#ffff;
@@ -19,16 +18,30 @@
   --categoryaTextC0lor:#777777;
   --selectColor:#ffff;
   --liColor: #F4F5F7;
+  --appBg: #FFFFFF;
+  --exColor:#BEC0C1;
+  --selectbg:#fff;
+
+  --borderCategoryDate: 1px solid #F4F5F7 !important;
 }
 
 .darkMode{
-  --body-collor:#16171B:
-  --textFirstColor:#fffff;
+  --textFirstColor:#ffff;
+  --appBg:#16171B;
   --textSecondColor:#959595;
   --card-color: #222327;
   --allnewsBtn:#EAEAEA;
   --footerColor:#469264;
   --footerText:#ffff;
+  --categoryColor:#3F534C;
+  --categoryaTextC0lor:#FFFFFF;
+  --categoryItemColor:#000000;
+  --exColor:#0000;
+  --textFirstColor:#ffff;
+  --borderCategoryDate: none;
+  --selectbg:#16171B;
+  --liColor:rgba(255,255,255,0.3);
+
 }
 ::-webkit-scrollbar{
   width: 0;

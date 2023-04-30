@@ -9,13 +9,16 @@ import Vkontakte from '../../img/Vkontakte (VK).svg'
 import Twitter from '../../img/Twitter.svg'
 import Telegram from '../../img/Telegram.svg'
 import Skype from '../../img/Skype.svg'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
-function Footer() {
+
+function Footer({loading}) {
   return (
     
     <footer className='footer'>
-    <div className='container align'>
+{ loading ? <Skeleton  width={'100%'} height={'700px'}/>  :  <div className='container align'>
       <div className="footer-wrapper">
         
       <div className="footer-logo">
@@ -45,7 +48,7 @@ function Footer() {
     <div className='line'></div>
     <p className='author-text'>© 2023  Footboll. All rights reserved</p>
       </div>
-    </footer>  
+}    </footer>  
   )
 }
 
