@@ -13,9 +13,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/category", require("./controller/category/route"));
 app.use("/country", require("./controller/country/route"));
 app.use("/club", require("./controller/club/route"));
-app.use('events', require("./controller/events/route"));
+// app.use('events', require("./controller/events/route"));
 app.use("/stadions", require("./controller/stadions/route"));
 app.use("/newscategory", require("./controller/newscategory/route"));
 app.use("/news", require("./controller/news/route"));
+app.use("/users", require("./controller/users/route"));
 
 app.listen(PORT, () => console.log("server listen port: " + PORT));
