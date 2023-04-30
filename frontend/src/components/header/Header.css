@@ -2,12 +2,16 @@ header{
   background:var(--primaryColor);
   width: 100%;
 }
+
 .header-wrapper{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 22px 0px;
+}
+.logo{
+  cursor: pointer;
 }
 .modeBtn{
   width: 50px;
