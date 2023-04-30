@@ -4,7 +4,6 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
@@ -42,21 +41,21 @@ function createData(
 
 export default function CustomizedTables({command}) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{background:`var(--appBg)`}}>
       <Table sx={{ minWidth:'415px'}} aria-label="customized table">
         <TableBody>
           {command.map((row) => (
           
-            <StyledTableRow key={row.id}>
-              <StyledTableCell align="right">{row.id}</StyledTableCell>
-              <StyledTableCell align="right" >
+            <StyledTableRow key={row.id}  sx={{background:`var(--liColor)`}}>
+              <StyledTableCell align="right" sx={{color:`var(--textFirstColor)`}}>{row.id}</StyledTableCell>
+              <StyledTableCell align="right" sx={{color:`var(--textFirstColor)`}} >
                   img
-              </StyledTableCell>
-              <StyledTableCell  >
+              </StyledTableCell >
+              <StyledTableCell  sx={{color:`var(--textFirstColor)`}} >
                 {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.command1}</StyledTableCell>
-              <StyledTableCell align="right">{row.command2}</StyledTableCell>
+              <StyledTableCell align="right" sx={{color:`var(--textFirstColor)`}}>{row.command1}</StyledTableCell>
+              <StyledTableCell align="right" sx={{color:`var(--textFirstColor)`}}>{row.command2}</StyledTableCell>
             </StyledTableRow>
          
           ))}

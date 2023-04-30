@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { lazy, useState } from 'react'
 import TableConentItem from '../table-conent-item/Table-conent-item'
 import CustomizedTables from '../table-conent-item/Table-conent-item'
 import './Table-content.css'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
-function TableContent() {
+function TableContent({loading}) {
   const [command, setCommand] = useState([
     {id:1, name:'Barcelona', command1:15,command2:14},
     {id:2, name:'Barcelona', command1:15,command2:14},
@@ -27,7 +29,8 @@ function TableContent() {
     
   ])
   return (
-    <div className='table-right'>
+    <>
+{ loading ? <Skeleton count={20} style={{marginTop: '10px'}} height={'50px'} width={'400px'} /> :   <div className='table-right'>
       <h3>
       Jadval
       </h3>
@@ -44,6 +47,7 @@ function TableContent() {
           <CustomizedTables command={command} />
       </ul>
     </div>
+}    </>
   )
 }
 

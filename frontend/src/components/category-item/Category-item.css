@@ -8,13 +8,16 @@
   row-gap: 40px;
 }
 .category-item__wrapper>span{
-background: #FFFFFF;
-border: 1px solid #F4F5F7 !important;
+background: var(--categoryItemColor);
+border: var(--borderCategoryDate);
+border-top: none !important;
 width: 120px;
-height: 25px;
+height: 50px !important;
 padding: 1px 5px;
 border-bottom-left-radius: 10px;
 border-bottom-right-radius: 10px;
+color: var(--textFirstColor);
+font-size: 12px;
 }
 .category-item__list{
   display: flex;

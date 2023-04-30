@@ -1,40 +1,28 @@
-import React, { useState } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import NewsButton from '../newsButton/NewsButton'
 import NewsCard from '../newsCard/NewsCard'
 import './Allnews.css'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import { Context } from '../../context/context'
 
-function Allnews({hidden}) {
-  const [card, setCard] = useState([
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
-    {title:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', decription:'Zidan "Manchester Yunayted" ga Premer-ligaga tayyor emasligini aytdi', date:'12.05.2021  12:54'},
 
-  ])
-  return (
+
+function Allnews({hidden,loading}) {
+  const [dataa,setDataa] = useContext(Context)
+
+return (
     <div className='container allnews' >
-      <NewsButton text="Barcha yangiliklar" bgcolor={true} color='#ffff' justifyContent={false} />
+{
+loading ? <Skeleton width={'100%'} height={'130px'}  style={{marginBottom:'40px'}}/>  : <NewsButton text="Barcha yangiliklar" bgcolor={true} color='#ffff' justifyContent={false} />
+}
         <div className='newsCard-wrapper'>
           {
-            card.map((value,id) => {
+            dataa.map((value,id) => {
               return(
-                <NewsCard key={id} {...value}/>
+                <Fragment key={id}>
+                {loading ? <Skeleton  width={' 415px'} height={' 404px'}/> :  <NewsCard key={id} {...value}/>}
+                </Fragment>
                 )
               }) 
             }

@@ -19,6 +19,7 @@
   line-height: 22px;
   color: var(--categoryaTextC0lor);
   width: 200px;
+  cursor: pointer;
 }
 .active-category{
   display: flex;
